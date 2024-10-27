@@ -1,0 +1,135 @@
+@if (!isNoData) {
+<ngx-skeleton-loader
+  count="4"
+  [theme]="{ 'border-radius': '0', height: '50px' }"
+>
+</ngx-skeleton-loader>
+} @if (isNoData && dataSource?.data?.length === 0) {
+<div class="no-data-available">
+  <!-- <img src="../../../../assets/images/data-not-available.png" alt="" /> -->
+  <h3>No-data-available</h3>
+</div>
+} @if (dataSource.data?.length !== 0 && isNoData) {
+<div class="table-container">
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    matSort
+    matSortDisableClear
+    (matSortChange)="onSortingChanged($event)"
+  >
+    @for (column of displayedColumns; track $index) {
+
+    <ng-container [matColumnDef]="column.columnDef">
+      <th
+        mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header="{{ column.columnDef }}"
+        [style.width.px]="1500 / column.length"
+        [disabled]="sortingDisabled"
+      >
+        <span>{{ column.displayName }} {{ column.sign }}</span>
+        @if (column.columnType == 'CHECKBOX') {
+        <span>
+          <mat-checkbox (change)="masterToggle()" [checked]="isAllSelected()">
+          </mat-checkbox>
+        </span>
+        }
+      </th>
+      <td mat-cell *matCellDef="let row; let i = index">
+        @if (column.columnType == 'CHECKBOX') {
+        <span>
+          <mat-checkbox
+            (change)="toggleSelection(row)"
+            [checked]="isSelected(row)"
+          >
+          </mat-checkbox
+        ></span>
+        } @if (column.columnType == 'NUMBER') {
+        <span>{{ row[column.columnDef] }}</span>
+        } @if (column.columnType == 'TEXT') {
+        <span>{{ row[column.columnDef] }}</span>
+        } @if (column.columnType == 'SESSION_ID') {
+        <span [innerHtml]="getLink(row[column.columnDef], column.columnType)">{{
+          row[column.columnDef]
+        }}</span>
+        } @if (column.columnType == 'TIMESTAMP') {
+        <span>{{ row[column.columnDef] | date : "yyyy-MM-dd HH:mm" }}</span>
+        } @if (column.columnType == 'LINK') {
+        <span
+          [innerHtml]="
+            getLink(
+              row[column.columnDef],
+              column.columnType,
+              row[column.dependentColumn]
+            )
+          "
+        ></span>
+        } @if (column.columnType == 'PROGRESS_BAR') {
+        <span>{{ row[column.columnDef] }}</span>
+        } @if (column.columnType == 'DATE') {
+        <span>{{ row[column.columnDef] | date }}</span>
+        } @if (column.columnType == 'BUTTON_GROUP') {
+        <div class="action-btn">
+          <button
+            mat-icon-button
+            id="tripleDotForMenu"
+            aria-label="Example icon-button with a menu"
+            (click)="deleteItem(row)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            id="tripleDotForMenu"
+            aria-label="Example icon-button with a menu"
+            (click)="editItem(row)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+        } @if (column.columnType == 'ASSIGN_GROUP') {
+        <div class="action-btn">
+          <button
+            mat-icon-button
+            id="tripleDotForMenu"
+            aria-label="Example icon-button with a menu"
+            (click)="assignItem(row)"
+          >
+            <mat-icon>verified_user</mat-icon>
+          </button>
+        </div>
+        }
+      </td>
+    </ng-container>
+    }
+    <tr mat-header-row *matHeaderRowDef="displayedColumn"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumn"></tr>
+  </table>
+</div>
+}
+<div
+  class="flex middle pagination"
+  [ngStyle]="{
+    display: isNoData && dataSource?.data?.length !== 0 ? 'block' : 'none'
+  }"
+>
+  @if(dynamic){
+  <mat-paginator
+    #paginator
+    [length]="totalCount"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    [pageSizeOptions]="pageSizeOptions"
+    (page)="onPageChange($event)"
+  ></mat-paginator>
+  }@else {
+  <mat-paginator
+    #paginator
+    [length]="dataSource?.data.length"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    [pageSizeOptions]="pageSizeOptions"
+  ></mat-paginator>
+  }
+</div>

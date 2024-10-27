@@ -1,0 +1,100 @@
+@import "../../../../public/scss/colours";
+@import "../../../../public/scss/variable.scss";
+.group-container {
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 5px 0;
+}
+
+form input, form textarea {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+button {
+  margin-left: 5px;
+}
+.notify-popup {
+  .popup-form {
+    margin: 0;
+    position: sticky;
+    top: 0;
+    background-color: #3e8a37;
+    color: white;
+    padding: 5px 5px;
+  }
+  width: 100%;
+  overflow: auto;
+  background-color: var(--cardbgColor);
+  color: var(--textColor);
+  display: flex;
+  flex-direction: column;
+  height: 800px;
+  width: 500px;
+  scrollbar-width: thin;
+  border-radius: 4px;
+
+  .tooltip-notify {
+    display: flex;
+    align-items: center;
+  }
+
+  .chat-box-messages-scroll-view {
+    height: $fluid;
+    min-height: $height * 15;
+    background-color: var(--cardbgColor);
+
+    .cdk-virtual-scroll-content-wrapper {
+      overflow: auto !important;
+      scroll-behavior: smooth;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  h4 {
+    margin: 0;
+    position: sticky;
+    top: 0;
+    background-color: #3e8a37;
+    color: white;
+    padding: 0 5px;
+  }
+
+  span {
+    padding: 0 5px;
+  }
+  .killedByInfo {
+    // font-size: 15px!important;
+  }
+  .killedByInfo-info {
+    // display: inline;
+  }
+}
+.round-add-btn {
+   display: flex;
+  justify-content: flex-end;
+  button{
+    background-color: #4caf50;
+    color: #f0f4f3;
+  }
+}

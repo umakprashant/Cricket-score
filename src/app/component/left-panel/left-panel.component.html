@@ -1,1 +1,38 @@
-<p>left-panel works!</p>
+<div class="left-container">
+  <div
+    class="left-panel"
+    [ngClass]="
+      toggleState === 'close-sidemenu' ? 'close-sidemenu' : 'open-sidemenu'
+    "
+  >
+    <div class="contex-nav">
+      <ul>
+        <li [ngClass]="setActiveTab == 'team' ? 'active' : ''">
+          <a routerLink="team">
+            <mat-icon matTooltip="team">spa</mat-icon>
+            <span> Team </span>
+          </a>
+        </li>
+
+        <li [ngClass]="setActiveTab == 'player' ? 'active' : ''">
+          <a routerLink="player">
+            <mat-icon matTooltip="player">spa</mat-icon>
+            <span> Player </span>
+          </a>
+        </li>
+        <li [ngClass]="setActiveTab == 'match' ? 'active' : ''">
+          <a routerLink="match">
+            <mat-icon matTooltip="match">spa</mat-icon>
+            <span> Player </span>
+          </a>
+        </li>
+        <li [ngClass]="setActiveTab == 'scoreboard' ? 'active' : ''">
+          <a routerLink="scoreboard">
+            <mat-icon matTooltip="scoreboard">spa</mat-icon>
+            <span> Scoreboard </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

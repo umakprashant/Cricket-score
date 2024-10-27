@@ -1,0 +1,92 @@
+@import "../../../../public/scss/colours";
+@import "../../../../public/scss/variable.scss";
+
+.left-container {
+  .left-panel {
+    &.close-sidemenu {
+      @media #{$large-phones}, #{$view-ipads} {
+        z-index: +10;
+      }
+    }
+    &.open-sidemenu {
+      @media #{$large-phones}, #{$view-ipads} {
+      }
+    }
+
+    position: fixed;
+    top: 50px;
+    // background-color: #4874cd;
+    background: linear-gradient(
+      to right,
+      var(--leftPanel2Color) 0%,
+      var(--leftPanel1Color) 100%
+    );
+    // background: linear-gradient(to right, --leftPanel2Color 0,  --leftPanel1Color 100%);
+
+    // background-image: linear-gradient(to right, #434343 0%, black 100%);
+
+    height: $fluid;
+    .logo {
+      display: $flex;
+      align-items: $center;
+
+      background: linear-gradient(
+        to right,
+        var(--leftPanel2Color) 0%,
+        var(--leftPanel1Color) 100%
+      );
+
+      .logo-icon {
+        display: $flex;
+        align-items: $center;
+        gap: $gap;
+        padding: ($padding - 1) ($padding + 2);
+
+        .mat-icon {
+          width: $width * 3 - 1;
+          font-size: $fontsize * 2.2;
+          color: rgb(114, 0, 82);
+          height: $height * 3 + 1;
+        }
+        h2 {
+          margin: $zero;
+          color: $white;
+        }
+      }
+    }
+
+    ul {
+      margin: $margin - 5;
+      li {
+        a {
+          display: $flex;
+          width: $fluid;
+          text-decoration: $none;
+          gap: $gap + 5;
+          font-size: $fontsize;
+          color: $white;
+          padding: ($padding) ($padding);
+          align-items: $center;
+          .span {
+            @media #{$large-phones} {
+              display: none;
+            }
+            &:hover {
+              display: none;
+            }
+          }
+        }
+        &:hover {
+          // background-color: #4277f5;
+          background-color: rgba(154, 184, 250, 1);
+          border-radius: 50px 0px 0px 50px;
+        }
+      }
+    }
+
+    .active {
+      background-color: $red;
+      border-radius: 50px 0px 0px 50px;
+    }
+  }
+}

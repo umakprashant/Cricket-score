@@ -1,0 +1,39 @@
+$zero: 0;
+$margin: 10px;
+$padding: 10px;
+$fluid: 100%;
+$half: 50%;
+$one-third: 33%;
+$auto: auto;
+$flex: flex;
+$center: center;
+$left: left;
+$right: right;
+$fontsize: 14px;
+$normal: 400;
+$medium: 500;
+$bold: 700;
+$none: none;
+$block: block;
+$width: 10px;
+$height: 10px;
+$gap:10px;
+$mediumfont: "robotoMedium";
+$robotofont: "Roboto";
+$gap:10px;
+$radius:10px;
+
+/* for responsive media */
+$extra-small-phones: "only screen and (max-width: 220px)";
+$small-phones: "only screen and (max-width: 480px)";
+$large-phones: "only screen and (max-width: 768px)";
+
+$extra-small-phones-min: "only screen and (min-width: 220px) and (max-width: 600px)";
+$landscap-phones: "only screen and (min-width : 601px) and (max-width : 767px)";
+$view-ipads: "only screen and (min-width : 768px) and (max-width : 1024px)";
+$landscap-view-ipads: "only screen and (min-width : 768px) and (max-width : 1024px) and (orientation:landscape)";
+
+$view-laptop: "only screen and (min-width : 1200px) and (max-width : 1440px)";
+$small-laptop-view: "only screen and (min-width : 1025px) and (max-width : 1199px)";
+$ipad-pro:"only screen and (min-width : 1366px) and (max-width : 1366px)";
+

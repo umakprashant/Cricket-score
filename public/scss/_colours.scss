@@ -1,0 +1,298 @@
+// $bodyBg: #f2f2f2;
+$bodyBg: #ffffff;
+$white: #ffffff;
+$darkbg1Color:#15171a;
+$darkbodybg1Color:#0f1114;
+$inputBorderColor:#74797d;
+// $black: #676767;
+$lightAsh: #999999;
+$ash: #707070;
+$battleshipgrey: #6c757d;
+$darkAsh: #666666;
+$lightGrey: #d6d2d2;
+$titlecolor: #333333;
+$title2color: #757575;
+$textcolor: #777777;
+$Platinum: #e7e7e7;
+$silver: #c2c2c2;
+$bordercolor: #e3e3e3;
+$sessionGrey: #f2f2f2;
+
+/*Blue color shade*/
+$loginLight: #f1f3fd;
+$primary: #004c87;
+$bgcolor: #f7fafd;
+$lightborder: #c5e3fc;
+$lightBlue: #f1f9ff;
+$navHover: #edf7ff;
+$easternBlue: #4179a6;
+$iceBlue: #249ab0;
+$blue: #105fa3;
+$darkBlue: #014c89;
+$skyBlue: #3eccf4;
+$paleBlue: #bfd2e1;
+
+/*Red color shade*/
+$secondary: #be216b;
+$secondaryDark: #981b56;
+$red: #dc3545;
+$loginRed: #fd8d8d;
+$lightRed: #df3685;
+$darkRed: #bf206b;
+$pink: #fc4594;
+$lightpink: #f5dbe7;
+
+$lightPurple: #a652a9;
+$purple: #6c1093;
+$yellow: #ffcb00;
+$lightGreen: #00c300;
+$headerborder: #33709f;
+$subtitle: #060606;
+$placeholder: #999999;
+
+$chipIcon: #9ec3e0;
+
+/*New variables*/
+$dropBgColor: #424242;
+$grey: #b7a8a87d;
+$iconBg: #4576ab;
+$redButton: $secondary;
+$redBorder: $secondary;
+$redText: $white;
+$redHover: $secondary;
+
+$blueButton: $primary;
+$blueBorder: $primary;
+$blueText: $white;
+$blueHover: $primary;
+
+:root {
+  --ds-space-600: 3rem;
+  --ds-space-1000: 2rem;
+}
+/* New add color-material */
+/* material icon color*/
+$icon: #a15ade;
+$icon-border: #8348b6;
+/* light blue color*/
+$light-blue-color: #1278fc;
+$light-blue-color: #a15adf;
+
+/*Green color*/
+$green: green;
+$green-bg: #e8f6f0;
+$green-border: #49cc90;
+$green-hover: #49cc90;
+
+/*yellow color*/
+$yellow: orange;
+$yellow-bg: #fbf1e6;
+$yellow-border: #fca130;
+
+/*blue color*/
+$blue: #61affe;
+$blue-bg: #ebf3fb;
+$blue-border: #61affe;
+$blue-hover: #61affe;
+
+/*red color*/
+$red: #f93e3e;
+$red-bg: #fae7e7;
+$red-border: #f93e3e;
+
+/*border color*/
+$border-grey: #ededed;
+
+/*white color*/
+$white: white;
+$darkWhite: #e8ebee;
+$grey2: #434343;
+$borderBgColor: #a1a1a1;
+/*black color*/
+$black: #000000;
+$bodyColor: #858585;
+/*secondary color*/
+$secondary: red;
+$secondary-hover: #f93e3e;
+
+/*primary color*/
+$primary: #1c75f9;
+$primary-hover: #61affe;
+/*disabled color*/
+$disabled: #d6d2d2;
+$disabled-icon: #8188a1;
+$headerColor: #3c3c3c;
+$deleteLightColor: #e4bbbb;
+$deleteDarkColor: #ec4a4a;
+$HeaderDarkBgColor: #343434;
+$HeaderLightBgColor: #ffffff;
+$HeaderDarkColor: #ffffff;
+$HeaderLightColor: $black;
+
+@mixin lighten() {
+  --bgColor: #{$bodyBg};
+  --bodyBgColor: #{$darkWhite};
+  --iconColor: #{$primary};
+  --inputColor:#{$black};
+  --inputTextColor: #{$title2color};
+
+  --headerColor: #{$white};
+  --filterColor: #{$blue};
+  --titleColor: #{$black};
+  --subtitleColor: #{$subtitle};
+  --placeHolder: #{$placeholder};
+  --deleteConfirmation: #{$deleteLightColor};
+  --tableHeaderBgColor: #{$HeaderLightBgColor};
+  --tableHeaderColor: #{$HeaderLightColor};
+  --headerIconColor: #{$primary};
+  //  --headerIconHover: #{$white};
+  --headerIconHover: #{$grey};
+  --textColor: #{$black};
+  --linkTextColor: #{$red};
+  --borderColor: #{$bordercolor};
+  --leftPanel1Color: #{$primary};
+  --leftPanel2Color: #{$icon};
+
+  // --headerColor: #{$primary};
+  --headerBorder: #{$headerborder};
+  --headerText: #{$white};
+  --headerIconBg: #{$iconBg};
+
+  --cardbgColor: #{$white};
+  --cardText: #{$black};
+  --cardIcon: #{$primary};
+  --checkBoxColor: #{$black};
+  --navHover: #{$navHover};
+
+  --filterBg: #{$lightBlue};
+  --filterBorder: #{$lightborder};
+  --dropdownbgColor: #{$white};
+
+  // --chipBg: #{$lightBlue};
+  --chipBorder: #{$lightborder};
+  --chipText: #{$textcolor};
+  --chipIcon: #{$chipIcon};
+
+  --redBg: #{$redButton};
+  --redText: #{$white};
+  --redBorder: #{$redBorder};
+  --redHover: #{$lightRed};
+
+  --blueBg: #{$blueButton};
+  --blueText: #{$white};
+  --blueBorder: #{$blueBorder};
+  --blueHover: #{$blue};
+
+  --dialogHeader: #{$white};
+  --dialogFooter: #{$white};
+
+  --textCardColor: #{$primary};
+  --chatBotColor: #{$primary};
+  --actionColor: #{$secondary};
+
+  --dateNumberColor: #{$secondary};
+  --dropDownBgColor: #{$white};
+  --greyHeaderColor: #{$sessionGrey};
+  --underline: #{$black};
+
+  /*for test*/
+  --chipBg: #{$icon};
+}
+
+// mixin that enables css variables in dark mode
+$darkMain: #3c3c3c;
+$darkCard: #22272b;
+$darkCardText: #8a949f;
+
+$darkHover: #29353e;
+$darkBorder: #a6c5e229;
+
+$darkText: #b6c2cf;
+$darkTitle: #b6c2cf;
+$darkSubTitle: #a0a6ad;
+
+$darkPlaceholder: #999999;
+$darkFilterBg: #1b2227;
+
+$darkFilterBorder: #2a3137;
+$darkFilterText: #959ca3;
+
+$darkHeader: #1d2125;
+
+$darkChipText: #959ca3;
+
+// $darkRedButton:#be216b69;
+$darkRedButton: #622545;
+$darkRedBorder: #be216b69;
+$darkRedText: $white;
+
+$darkBlueButton: #043c67;
+$darkBlueBorder: #004c875c;
+$darkBlueText: $white;
+$dropDownBg: #1e2226;
+
+@mixin darken() {
+  --chipBg: #{$light-blue-color};
+  // --headerColor: #{$headerColor};
+  --deleteConfirmation: #{$deleteDarkColor};
+  --leftPanel1Color: #{$black};
+  --leftPanel2Color: #{$grey2};
+  --iconColor: #{$borderBgColor};
+  --bgColor: #{$darkbg1Color};
+   --inputColor:#{$HeaderDarkColor};
+  --inputTextColor: #{$title2color};
+  --bodyBgColor: #{$darkbodybg1Color};
+  --titleColor: #{$darkTitle};
+  --textColor: #{$darkText};
+  --subtitleColor: #{$darkSubTitle};
+  --placeHolder: #{$darkPlaceholder};
+  --linkTextColor: #{$red};
+  --borderColor: #{$darkBorder};
+  --filterColor: #{$grey};
+  --headerIconColor: #{$white};
+  --headerColor: #{$primary};
+  --headerBorder: #{$darkBorder};
+  --headerText: #{$darkText};
+  --headerIconBg: #{$darkBorder};
+  --headerIconHover: #{$grey};
+  --tableHeaderBgColor: #{$HeaderDarkBgColor};
+  --tableHeaderColor: #{$HeaderDarkColor};
+  --cardbgColor: #{$darkCard};
+  --cardText: #{$darkCardText};
+  --cardIcon: #{$secondary};
+--checkBoxColor: #{$bordercolor};
+  --navHover: #{$darkHover};
+
+  --filterBg: #{$darkFilterBg};
+  --filterBorder: #{$darkFilterBorder};
+
+  --dropdownbgColor: #{$dropBgColor};
+
+  // --chipBg: #{$darkFilterBg};
+  --chipBorder: #{$darkFilterBorder};
+  --chipText: #{$darkChipText};
+  --chipIcon: #{$darkChipText};
+
+  --redBg: #{$darkRedButton};
+  --redText: #{$white};
+  --redBorder: #{$darkRedBorder};
+  --redHover: #{$redHover};
+
+  --blueBg: #{$darkBlueButton};
+  --blueText: #{$white};
+  --blueBorder: #{$darkBlueBorder};
+  --blueHover: #{$blueHover};
+
+  --dialogHeader: #{$darkHeader};
+  --dialogFooter: #{$darkHeader};
+
+  --textCardColor: #{$darkSubTitle};
+
+  --chatBotColor: #{$darkHeader};
+  --actionColor: #{$secondary};
+
+  --dateNumberColor: #{$primary};
+  --dropDownBgColor: #{$dropDownBg};
+  --greyHeaderColor: #{$darkHeader};
+  --underline: #{$white};
+}

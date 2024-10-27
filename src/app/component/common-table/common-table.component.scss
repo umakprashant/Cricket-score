@@ -1,0 +1,87 @@
+@import "../../../../public/scss/colours";
+@import "../../../../public/scss/variable.scss";
+
+.table-container {
+  overflow: auto;
+  max-height: 400px !important;
+  min-height: 60px !important;
+  table {
+    table-layout: fixed !important;
+    width: $fluid;
+    th {
+      background-color: var(--cardbgColor);
+      color: var(--textColor);
+      font-weight: 2px;
+      z-index: 2 !important;
+      position: sticky !important;
+      top: $zero !important;
+    }
+    td {
+      // background-color: var(--cardbgColor);
+      color: var(--textColor);
+      vertical-align: baseline;
+      &:first-child {
+        padding-top: $zero !important;
+      }
+      &:last-child {
+        // background-color: inherit;
+        .action-btn {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+.action-btn {
+  align-items: $center;
+  .material-icons {
+    color: red;
+  }
+}
+.mat-progress-bar {
+  .mat-mdc-progress-bar .mdc-linear-progress__buffer-bar {
+    background-color: rgba(63, 181, 175, 0.25) !important;
+    background-color: red;
+  }
+  .mdc-linear-progress__bar-inner {
+    border-color: red !important;
+  }
+}
+:host ::ng-deep.mat-mdc-table {
+  .mat-mdc-header-row {
+    // height: $height*4 + 6 !important;
+    position: relative;
+    z-index: 2 !important;
+
+    .mat-mdc-header-cell {
+      border-bottom-width: 2px;
+    }
+  }
+}
+.mat-mdc-header-cell {
+  font-weight: inherit;
+  line-height: inherit;
+}
+.no-data-available {
+  background-color: #f8f9fa; /* Light grey background */
+  color: #6c757d; /* Muted text color */
+  text-align: center;
+  padding: 20px;
+  border: 2px dashed #6c757d; /* Dashed border for attention */
+  border-radius: 8px; /* Slightly rounded corners */
+  font-family: 'Arial', sans-serif; /* Clean, simple font */
+  font-size: 18px; /* Appropriate font size */
+  text-transform: uppercase; /* Make the text all uppercase */
+  letter-spacing: 1px; /* Space out the letters slightly */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a light shadow */
+  margin: 20px auto; /* Center the div */
+  max-width: 400px; /* Limit the width */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Optional hover effect to add interaction */
+.no-data-available:hover {
+  background-color: #e9ecef; /* Slightly darker background on hover */
+  color: #495057; /* Slightly darker text on hover */
+}

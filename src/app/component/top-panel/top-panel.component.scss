@@ -1,0 +1,81 @@
+@import "../../../../public/scss/colours";
+@import "../../../../public/scss/variable.scss";
+.header {
+  width: $fluid;
+  // background-color: var(--headerColor);
+  background: linear-gradient(
+    to right,
+    var(--leftPanel2Color) 0%,
+    var(--leftPanel1Color) 100%
+  );
+  border-bottom: 1px solid var(--borderColor);
+  display: $flex;
+  align-items: $center;
+  height: $height * 5;
+  justify-content: space-between;
+  gap: $zero;
+  position: sticky;
+  top: $zero;
+  z-index: 6;
+  padding: ($padding) ($padding + 5);
+  .material-icons {
+    // color: var(--headerIconColor);
+    font-size: $fontsize + 10;
+    color: $white;
+    margin-right: $margin;
+  }
+  .dark_mode {
+    .material-icons {
+      color: $black;
+      //  color: $white;
+    }
+  }
+  .project-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+:host::ng-deep.cdk-overlay-pane {
+  max-width: inherit !important;
+  width: $zero !important;
+}
+.logo {
+  display: $flex;
+  align-items: $center;
+  height: $height * 5;
+     gap: $gap - 5;
+  .logo-icon {
+    display: $flex;
+    align-items: $center;
+    cursor: pointer;
+    img {
+      width: $width * 10;
+      height: 55px;
+    }
+    .logo-item {
+      display: $flex;
+      align-items: $center;
+      gap: $gap;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .squard{
+        @media #{$small-phones} {
+          display: $none;
+        }
+    }
+    .mat-icon {
+      width: $width * 3 - 1;
+      font-size: $fontsize * 2.2;
+      color: rgb(114, 0, 82);
+      height: $height * 3 + 1;
+    }
+    h2 {
+      margin: $zero;
+      color: $white;
+    }
+  }
+}

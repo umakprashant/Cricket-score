@@ -1,0 +1,60 @@
+<mat-card-content>
+  <div class="round-add-btn">
+    <button mat-raised-button (click)="addGroup()">Add Group</button>
+  </div>
+  <div class="table-container">
+    <app-common-table
+      [data]="dataSource"
+      [displayedColumns]="matchColumn"
+      [parent]="'en'"
+      [loaderCondition]="true"
+      [tableName]="'Group Table'"
+      [dynamic]="false"
+      (edit)="editContest($event)"
+      (delete)="deleteGroup($event)"
+      [totalCount]="roundLength"
+    ></app-common-table>
+  </div>
+</mat-card-content>
+<ng-template #openGroupCreatePopup>
+  <div class="dialog-workplace">
+    <div class="dialog-header">
+      <div class="dialog-header-title">
+        {{ isUpdate ? "Update Group" : "Save Group" }}
+      </div>
+    </div>
+    <div class="form-container">
+      <form [formGroup]="form">
+        <mat-form-field appearance="outline" class="w100">
+          <mat-label>Group Name</mat-label>
+          <input
+            matInput
+            type="text"
+            formControlName="groupName"
+            id="killerPlayerInputBox"
+            placeholder="Group Name"
+            class="bold-text"
+          />
+        </mat-form-field>
+        <div class="dialog-footer">
+          <div class="footer-btn-container">
+            <button
+              mat-raised-button
+              class="apply-btn"
+              [disabled]="form.invalid"
+              (click)="isUpdate ? updateForm() : submitForm()"
+              type="submit"
+            >
+              {{ isUpdate ? "Update" : "Create" }}
+            </button>
+
+            <button mat-raised-button class="border-btn" (click)="closePopup()">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</ng-template>

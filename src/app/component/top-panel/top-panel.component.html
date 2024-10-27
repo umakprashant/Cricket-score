@@ -1,0 +1,52 @@
+<div class="header">
+  <!-- @if(showToggleIcon !=='game'){
+
+  <mat-icon (click)="toggleSideBar()">menu</mat-icon>
+  }@else {
+  <div class="logo">
+    <a class="logo-icon">
+      <mat-icon>filter_vintage</mat-icon>
+      <h2>Squad 16</h2>
+    </a>
+  </div>
+  } -->
+  <div class="logo">
+
+    <a class="logo-icon">
+      <!-- <mat-icon>filter_vintage</mat-icon> -->
+      <!-- <h2 (click)="redirectToGameList()">Squad 16</h2> -->
+      @if(isDarkMode){
+      <div class="logo-item">
+        <!-- <img
+          src="../../../../assets/images/16.png"
+        /> -->
+
+      </div>
+
+      }@else{
+      <div class="logo-item">
+        <!-- <img
+          src="../../../../assets/images/16.png"
+        /> -->
+      </div>
+
+      }
+    </a>
+
+  </div>
+  <div class="project-user">
+    @if(!isDarkModeButton){
+    <button mat-icon-button class="dark_mode" (click)="changeTheme(true)">
+      <mat-icon [ngClass]="{ 'dark-mode': isDarkMode }">brightness_2</mat-icon>
+    </button>
+    }@else{
+    <button mat-icon-button (click)="changeTheme()">
+      <mat-icon [ngClass]="{ 'light-mode': !isDarkMode }">
+        brightness_high</mat-icon
+      >
+    </button>
+
+    }
+
+  </div>
+</div>

@@ -1,0 +1,14 @@
+@import "../../../../public/scss/colours";
+@import "../../../../public/scss/variable.scss";
+
+.open-sidemenu {
+  @media #{$view-ipads},#{$large-phones} {
+    width: $zero !important;
+  }
+}
+.close-sidemenu {
+  @media #{$view-ipads},#{$large-phones} {
+    width: 188px;
+    z-index: 6;
+  }
+}
